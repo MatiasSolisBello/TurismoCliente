@@ -1,0 +1,45 @@
+<!--this is navbar.component.html-->
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-lg-6">
+            <h3>Reservas</h3>
+        </div>
+        <div class="btn-reporte col-lg-6">
+            <a class="btn btn-success float-right" 
+                [routerLink]="['/agregar-reserva']">
+                Crear Reserva
+            </a>
+        </div>
+    </div>
+    <br>
+    <!-- ADD TASK FORM -->
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Precio</th>
+                    <th>Llegada</th>
+                    <th>Salida</th>
+                    <th>Cliente</th>
+                    <th>Servicio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reserva of listReserva">
+                    <td><a [routerLink]="['/ver-reserva/', reserva.id_reserva]">{{reserva.id_reserva}}</a></td>
+                    <td>{{reserva.precio_total}}</td>
+                    <td>{{reserva.fecha_llegada}}</td>
+                    <td>{{reserva.fecha_salida}}</td>
+                    <td>{{reserva.cliente.nombre}}</td>
+                    <td>{{reserva.servicio.nombre}}</td>
+                    <td>
+                        <button class="btn btn-danger btm-sm float-right"
+                            (click)="delete(reserva.id_reserva)">CANCELAR</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
