@@ -12,6 +12,7 @@ import { ListReservaComponent } from './components/list-reserva/list-reserva.com
 import { VerDepartComponent } from './components/ver-depart/ver-depart.component';
 import { VerReservaComponent } from './components/ver-reserva/ver-reserva.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReservarDepartComponent } from './components/reservar-depart/reservar-depart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     ListReservaComponent,
     VerDepartComponent,
     VerReservaComponent,
+    ReservarDepartComponent,
   ],
   imports: [
     BrowserModule,

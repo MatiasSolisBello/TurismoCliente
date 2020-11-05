@@ -4,12 +4,14 @@ import { ListDepartComponent } from './components/list-depart/list-depart.compon
 import { ListReservaComponent } from './components/list-reserva/list-reserva.component';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { ReservarDepartComponent } from './components/reservar-depart/reservar-depart.component';
 import { VerDepartComponent } from './components/ver-depart/ver-depart.component';
 import { VerReservaComponent } from './components/ver-reserva/ver-reserva.component';
 
 const routes: Routes = [
   //{path: 'agregar-reserva', component: AgregarEditarReservaComponent},
   //{path: 'editar-reserva/:id_reserva', component: AgregarEditarReservaComponent},
+  {path: 'reservar/:id_depart', component: ReservarDepartComponent},
 
   {path: 'ver-depart/:id_depart', component: VerDepartComponent},
   {path: 'ver-reserva/:id_reserva', component: VerReservaComponent},

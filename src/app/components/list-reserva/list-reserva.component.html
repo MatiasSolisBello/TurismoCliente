@@ -28,6 +28,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let reserva of listReserva">
+                    <!--
                     <td><a [routerLink]="['/ver-reserva/', reserva.id_reserva]">{{reserva.id_reserva}}</a></td>
                     <td>{{reserva.precio_total}}</td>
                     <td>{{reserva.fecha_llegada}}</td>
@@ -36,8 +37,16 @@
                     <td>{{reserva.servicio.nombre}}</td>
                     <td>
                         <button class="btn btn-danger btm-sm float-right"
-                            (click)="delete(reserva.id_reserva)">CANCELAR</button>
+                            (click)="delete(reserva.id_reserva)">
+                            CANCELAR
+                        </button>
+
+                        <button class="btn btn-secondary btm-sm float-right" 
+                            [routerLink]="['/editar-reserva/', reserva.id_reserva]">
+                            EDITAR
+                        </button>
                     </td>
+                    -->
                 </tr>
             </tbody>
         </table>

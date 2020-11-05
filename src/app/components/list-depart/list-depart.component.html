@@ -26,6 +26,11 @@
                     <td>{{depart.precio}}</td>
                     <td>{{depart.estado}}</td>
                     <td>{{depart.ciudad}}</td>
+                    <td>
+                        <button class="btn btn-success btm-sm float-right" [routerLink]="['/reservar/', depart.id_depart]">
+                            RESERVAR
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

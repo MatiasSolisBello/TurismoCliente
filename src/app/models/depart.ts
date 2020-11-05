@@ -1,3 +1,5 @@
+import {Reserva} from './reserva';
+
 export class Depart{
 	id_depart: number;
 	precio: number;
@@ -5,4 +7,5 @@ export class Depart{
     ciudad: string;
     descripcion: string;
     foto: string;
+    id_reserva: Reserva;
 }
