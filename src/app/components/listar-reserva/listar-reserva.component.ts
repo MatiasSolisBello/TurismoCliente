@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Reserva } from 'src/app/models/reserva';
+import { Reserva } from 'src/app/models/Reserva';
 import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
-  selector: 'app-list-reserva',
-  templateUrl: './list-reserva.component.html',
-  styleUrls: ['./list-reserva.component.css']
+  selector: 'app-listar-reserva',
+  templateUrl: './listar-reserva.component.html'
 })
-export class ListReservaComponent implements OnInit {
+export class ListarReservaComponent implements OnInit {
   listReserva: Reserva[];
   constructor(private reservaService: ReservaService) { }
 
@@ -19,12 +18,5 @@ export class ListReservaComponent implements OnInit {
     this.reservaService.getListReserva().subscribe(data => {
       this.listReserva = data;
     });
-  }
-
-  delete(id_reserva: number){
-    this.reservaService.deleteReserva(id_reserva).subscribe(data => {
-      this.cargarReserva();
-
-    })
   }
 }

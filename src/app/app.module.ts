@@ -1,36 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { PrincipalComponent } from './components/principal/principal.component';
-import { LoginComponent } from './components/login/login.component';
-import { ListDepartComponent } from './components/list-depart/list-depart.component';
-import { ListReservaComponent } from './components/list-reserva/list-reserva.component';
-import { VerDepartComponent } from './components/ver-depart/ver-depart.component';
-import { VerReservaComponent } from './components/ver-reserva/ver-reserva.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReservarDepartComponent } from './components/reservar-depart/reservar-depart.component';
+import { NavbarComponent } from './components/include/navbar/navbar.component';
+import { LoginComponent } from './components/include/login/login.component';
+import { PrincipalComponent } from './components/include/principal/principal.component';
+import { ListaDepartComponent } from './components/lista-depart/lista-depart.component';
+import { ListarReservaComponent } from './components/listar-reserva/listar-reserva.component';
+import { ListarServicioComponent } from './components/listar-servicio/listar-servicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PrincipalComponent,
     LoginComponent,
-    ListDepartComponent,
-    ListReservaComponent,
-    VerDepartComponent,
-    VerReservaComponent,
-    ReservarDepartComponent,
+    PrincipalComponent,
+    ListaDepartComponent,
+    ListarReservaComponent,
+    ListarServicioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Depart } from 'src/app/models/depart';
+import { Depart } from 'src/app/models/Depart';
 import { DepartService } from 'src/app/services/depart.service';
 
 @Component({
-  selector: 'app-list-depart',
-  templateUrl: './list-depart.component.html',
-  styleUrls: ['./list-depart.component.css']
+  selector: 'app-lista-depart',
+  templateUrl: './lista-depart.component.html'
 })
-export class ListDepartComponent implements OnInit {
+export class ListaDepartComponent implements OnInit {
   listDepart: Depart[];
 
   constructor(private departService: DepartService) { }
@@ -21,12 +20,4 @@ export class ListDepartComponent implements OnInit {
       this.listDepart = data;
     });
   }
-
-  delete(id_depart: number){
-    this.departService.deleteDepart(id_depart).subscribe(data => {
-      this.cargarDepart();
-
-    })
-  }
-
 }

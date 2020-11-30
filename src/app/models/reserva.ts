@@ -1,14 +1,15 @@
-import {Cliente} from './cliente';
+import {Usuario} from './Usuario';
 import {Depart} from './depart';
 import {Servicio} from './servicio';
 
 export class Reserva{
-    id_reserva: number;
-    precio_total: number;
+    id: number;
+    precio: number;
     descripcion: string;
-    fecha_llegada: Date;
-    fecha_salida: Date;
-    rut: Cliente;
-    id_depart: Depart;
-    id_servicio: Servicio;
+    llegada: Date;
+    salida: Date;
+    pago: string;
+    usuario_id: Usuario;
+    depart_id: Depart;
+    servicio_id: Servicio;
 }

@@ -18,16 +18,19 @@
                     <th>Precio</th>
                     <th>Estado</th>
                     <th>Ciudad</th>
+                    <th>Descripcion</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let depart of listDepart">
-                    <td><a [routerLink]="['/ver-depart/', depart.id_depart]">{{depart.id_depart}}</a></td>
+                    <td>{{depart.id}}</td>
                     <td>{{depart.precio}}</td>
                     <td>{{depart.estado}}</td>
                     <td>{{depart.ciudad}}</td>
+                    <td>{{depart.descripcion}}</td>
                     <td>
-                        <button class="btn btn-success btm-sm float-right" [routerLink]="['/reservar/', depart.id_depart]">
+                        <button class="btn btn-success btm-sm float-left" [routerLink]="['/reservar/', depart.id]">
                             RESERVAR
                         </button>
                     </td>
