@@ -19,4 +19,12 @@ export class ListarReservaComponent implements OnInit {
       this.listReserva = data;
     });
   }
+
+  delete(id: number){
+    this.reservaService.deleteReserva(id).subscribe(data => {
+      this.cargarReserva();
+
+    })
+  }
+
 }

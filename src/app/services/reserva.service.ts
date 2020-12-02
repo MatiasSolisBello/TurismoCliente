@@ -21,4 +21,9 @@ export class ReservaService {
     return this.http.get<Reserva[]>
     (this.myAppUrl + this.myApiUrl);
   }
+
+  deleteReserva(id: number):Observable<Reserva>{
+    return this.http.delete<Reserva>
+    (this.myAppUrl + this.myApiUrl + id);
+  }
 }
