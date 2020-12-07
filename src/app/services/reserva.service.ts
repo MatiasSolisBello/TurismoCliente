@@ -22,6 +22,25 @@ export class ReservaService {
     (this.myAppUrl + this.myApiUrl);
   }
 
+  createReserva(id: number, reserva : Reserva): Observable<Reserva>{
+    return this.http.post<Reserva>
+    (this.myAppUrl + '/servicio/' + reserva.servicio_id +
+    '/depart/' + reserva.departamento_id+ '/user/' + 
+    reserva.usuario_id + '/reserva/', reserva, this.httpOptions );
+  }
+
+  verReserva(id: number): Observable<Reserva>{
+    return this.http.get<Reserva>
+    (this.myAppUrl + this.myApiUrl+ id);
+  }
+
+  updateReserva(id: number, servicio_id: number, reserva: Reserva):
+    Observable<Reserva>{
+    return this.http.put<Reserva>
+    (this.myAppUrl + '/servicio/'+ reserva.servicio_id + this.myApiUrl
+    + reserva.id, reserva, this.httpOptions);
+  }
+
   deleteReserva(id: number):Observable<Reserva>{
     return this.http.delete<Reserva>
     (this.myAppUrl + this.myApiUrl + id);

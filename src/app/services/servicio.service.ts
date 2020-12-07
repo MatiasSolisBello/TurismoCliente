@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Reserva } from '../models/Reserva';
 import { Servicio } from '../models/Servicio';
 
 @Injectable({
@@ -18,6 +19,6 @@ export class ServicioService {
 
   getListServicio(): Observable<Servicio[]>{
     return this.http.get<Servicio[]>
-    (this.myAppUrl + this.myApiUrl);
+    (this.myAppUrl + this.myApiUrl)
   }
 }

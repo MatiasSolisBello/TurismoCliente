@@ -9,7 +9,8 @@ import { LoginComponent } from './components/include/login/login.component';
 import { PrincipalComponent } from './components/include/principal/principal.component';
 import { ListaDepartComponent } from './components/lista-depart/lista-depart.component';
 import { ListarReservaComponent } from './components/listar-reserva/listar-reserva.component';
-import { ListarServicioComponent } from './components/listar-servicio/listar-servicio.component';
+import { ContratarDepartComponent } from './components/contratar-depart/contratar-depart.component';
+import { ContratarServicioComponent } from './components/contratar-servicio/contratar-servicio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ListarServicioComponent } from './components/listar-servicio/listar-ser
     PrincipalComponent,
     ListaDepartComponent,
     ListarReservaComponent,
-    ListarServicioComponent,
+    ContratarDepartComponent,
+    ContratarServicioComponent,
   ],
   imports: [
     BrowserModule,

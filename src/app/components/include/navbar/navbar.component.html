@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/principal']">Turismo Real</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -11,15 +11,12 @@
             <a class="navbar-brand"  [routerLink]="['/listareserva']">Mis Reservas</a>
           </li>
           <li class="nav-item active">
-            <a class="navbar-brand"  [routerLink]="['/listaservicio']">Servicios</a>
-          </li>
-          <li class="nav-item active">
             <a class="navbar-brand"  [routerLink]="['/listadepart']">Departamentos</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Usuario
+              Cliente
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" [routerLink]="['/']">Cerrar Sesión</a>

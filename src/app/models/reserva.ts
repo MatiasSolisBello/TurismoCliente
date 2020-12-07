@@ -9,7 +9,7 @@ export class Reserva{
     llegada: Date;
     salida: Date;
     pago: string;
-    usuario_id: Usuario;
-    depart_id: Depart;
-    servicio_id: Servicio;
+    usuario_id?: Usuario;
+    departamento_id?: Depart;
+    servicio_id?: Servicio;
 }

@@ -1,0 +1,71 @@
+<!--this is navbar.component.html-->
+<app-navbar></app-navbar>
+
+<div class="container">
+    <form [formGroup] = "reserva" (ngSubmit)="guardarReserva()">
+        <br>
+        <h3>{{accion}} Reserva para Contratacion de Servicio Extra</h3>
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID Reserva:</label>
+            <input type="number" name="id" class="form-control" formControlName="id"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('id').hasError('required') && reserva.get('id').touched">
+            ID es requerido</span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID servicio:</label>
+            <input type="number" name="servicio_id" class="form-control" formControlName="servicio_id"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('servicio_id').hasError('required') && reserva.get('servicio_id').touched">
+            ID es requerido</span>
+        </div>
+       
+        <div class="form-group row">
+            <label class="control-label col-md-12">Precio:</label>
+            <input type="number" name="precio" class="form-control" formControlName="precio"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('precio').hasError('required') && reserva.get('precio').touched">
+            Precio es requerido</span>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Descripcion:</label>
+            <input type="text" name="descripcion" class="form-control" formControlName="descripcion"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('descripcion').hasError('required') && reserva.get('descripcion').touched">
+            Descripcion es requerido</span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12">Fecha llegada:</label>
+            <input type="date" name="llegada" class="form-control" formControlName="llegada"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('llegada').hasError('required') && reserva.get('llegada').touched">
+            Fecha llegada es requerida</span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12">Fecha Salida:</label>
+            <input type="date" name="salida" class="form-control" formControlName="salida"> 
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('salida').hasError('required') && reserva.get('salida').touched">
+            Fecha salida es requerida</span>
+        </div>
+        <div class="form-group row">
+            <label class="control-label col-md-12">Pago:</label>
+            <select class="form-control" formControlName="pago" name="pago">
+                <option value="">--Seleccione pago--</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Credito / Debito">Credito / Debito</option>
+                <option value="PENDIENTE">PENDIENTE</option>
+            </select>
+            <span class="text-danger ml-3" 
+            *ngIf="reserva.get('pago').hasError('required') && reserva.get('pago').touched">
+            Pago es requerido</span>
+        </div>
+        <div class="form-group row">
+            <button [routerLink] ="['/listareserva']" class="btn btn-secondary float-left">Cancelar</button>
+            <button class="btn btn-success float-right" [disabled] = "reserva.invalid">Aceptar</button>
+        </div>
+    </form>
+</div>
+

@@ -2,42 +2,48 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-    <div class="row" style="padding-top: 10px;">
-        <div class="col-lg-6">
-            <h3>Reservas</h3>
-        </div>
+<div class="row" style="padding-top: 10px;">
+    <div class="col-lg-6">
+        <h3>Reservas</h3>
     </div>
-    <br>
-    <!-- ADD TASK FORM -->
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Precio</th>
-                    <th>Descripcion</th>
-                    <th>Llegada</th>
-                    <th>Salida</th>
-                    <th>Pago</th>
+</div>
+<br>
+<!-- ADD TASK FORM -->
+<div class="table-responsive">
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Precio</th>
+            <th>Descripcion</th>
+            <th>Llegada</th>
+            <th>Salida</th>
+            <th>Pago</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let reserva of listReserva">
-                    <td>{{reserva.id}}</td>
-                    <td>{{reserva.precio}}</td>
-                    <td>{{reserva.descripcion}}</td>
-                    <td>{{reserva.llegada}}</td>
-                    <td>{{reserva.salida}}</td>
-                    <td>{{reserva.pago}}</td>
-                    <td>
-                        <button class="btn btn-danger btm-sm float-left" 
-                            (click)="delete(reserva.id)">
-                            CANCELAR RESERVA
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reserva of listReserva">
+        <td>{{reserva.id}}</td>
+        <td>{{reserva.precio | currency: '$'}}</td>
+        <td>{{reserva.descripcion}}</td>
+        <td>{{reserva.llegada | date: 'longDate' }}</td>
+        <td>{{reserva.salida | date: 'longDate' }}</td>
+        <td>{{reserva.pago}}</td>
+        <td>
+            <!--
+            <button class="btn btn-success btm-sm float-left"
+            [routerLink]="['/contratar-servicio', reserva.id]">
+                + SERVICIO
+            </button>-->
+            
+            <button class="btn btn-danger btm-sm float-left" 
+                (click)="delete(reserva.id)">
+                CANCELAR RESERVA
+            </button>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+</div>
 </div>
