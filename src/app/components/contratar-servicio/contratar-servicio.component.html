@@ -4,20 +4,12 @@
 <div class="container">
     <form [formGroup] = "reserva" (ngSubmit)="guardarReserva()">
         <br>
-        <h3>{{accion}} Reserva para Contratacion de Servicio Extra</h3>
+        <h3>{{accion}} Reserva</h3>
         <div class="form-group row">
             <label class="control-label col-md-12">ID Reserva:</label>
             <input type="number" name="id" class="form-control" formControlName="id"> 
             <span class="text-danger ml-3" 
             *ngIf="reserva.get('id').hasError('required') && reserva.get('id').touched">
-            ID es requerido</span>
-        </div>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">ID servicio:</label>
-            <input type="number" name="servicio_id" class="form-control" formControlName="servicio_id"> 
-            <span class="text-danger ml-3" 
-            *ngIf="reserva.get('servicio_id').hasError('required') && reserva.get('servicio_id').touched">
             ID es requerido</span>
         </div>
        

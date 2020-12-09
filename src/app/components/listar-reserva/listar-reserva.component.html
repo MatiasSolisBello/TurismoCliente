@@ -31,11 +31,11 @@
         <td>{{reserva.salida | date: 'longDate' }}</td>
         <td>{{reserva.pago}}</td>
         <td>
-            <!--
-            <button class="btn btn-success btm-sm float-left"
+            
+            <button class="btn btn-success btm-sm float-right"
             [routerLink]="['/contratar-servicio', reserva.id]">
-                + SERVICIO
-            </button>-->
+                ACTUALIZAR DATOS
+            </button>
             
             <button class="btn btn-danger btm-sm float-left" 
                 (click)="delete(reserva.id)">

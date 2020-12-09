@@ -1,2 +1,26 @@
 <app-navbar></app-navbar>
-<p>principal works!</p>
+
+<div data-ng-controller="RadarCtrl as radar">
+    <canvas data-sys-chart-radar
+            data-dataset="radar.data"
+            data-options="radar.options"
+            width="600"
+            height="240"></canvas>
+</div>
+
+<script>
+    (function () {
+    'use strict';
+
+    function RadarCtrl ( ) {
+
+        // Same as basic but also...
+
+        this.options = {
+            pointDot : false,
+            datasetStroke : false,
+            pointLabelFontSize : 12
+        };
+    }
+})();
+</script>

@@ -34,11 +34,9 @@ export class ReservaService {
     (this.myAppUrl + this.myApiUrl+ id);
   }
 
-  updateReserva(id: number, servicio_id: number, reserva: Reserva):
-    Observable<Reserva>{
+  updateReserva(reserva: Reserva):Observable<Reserva>{
     return this.http.put<Reserva>
-    (this.myAppUrl + '/servicio/'+ reserva.servicio_id + this.myApiUrl
-    + reserva.id, reserva, this.httpOptions);
+    (this.myAppUrl + this.myApiUrl, reserva, this.httpOptions);
   }
 
   deleteReserva(id: number):Observable<Reserva>{

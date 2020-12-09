@@ -19,7 +19,7 @@ export class ContratarServicioComponent implements OnInit {
     private router: Router) { 
     this.reserva = this.fb.group({
       id:['', Validators.required],
-      servicio_id:['', Validators.required],
+      //servicio_id:['', Validators.required],
       //usuario_id:['', Validators.required],
       precio:['', Validators.required],
       descripcion:['', Validators.required],
@@ -47,7 +47,7 @@ export class ContratarServicioComponent implements OnInit {
         salida: this.reserva.get('salida').value,
         pago: this.reserva.get('pago').value,
         servicio_id: this.reserva.get('servicio_id').value,
-        //usuario_id: this.reserva.get('usuario_id').value,
+        usuario_id: this.reserva.get('usuario_id').value,
       };
       this.reservaService.createReserva(this.id, res).subscribe(data => {
         this.router.navigate(['/listareserva']);
@@ -60,11 +60,11 @@ export class ContratarServicioComponent implements OnInit {
         llegada: this.reserva.get('llegada').value,
         salida: this.reserva.get('salida').value,
         pago: this.reserva.get('pago').value,
-        //departamento_id: this.reserva.get('departamento_id').value,
-        servicio_id: this.reserva.get('servicio_id').value,
-        //usuario_id: this.reserva.get('usuario_id').value,
-
       };
+
+        this.reservaService.updateReserva(res).subscribe(data => {
+          this.router.navigate(['/listareserva']);
+        })
     }
     console.log(this.reserva);
   }
@@ -81,7 +81,7 @@ export class ContratarServicioComponent implements OnInit {
           salida: data.salida,
           pago: data.pago,
           //usuario_id: data.usuario_id,
-          servicio_id: data.servicio_id,
+          //servicio_id: data.servicio_id,
           //departamento_id: data.departamento_id,
           
         });
